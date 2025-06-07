@@ -13,6 +13,7 @@
             <div id="add">
                 <button id="add-button" onclick="popup()">+</button>
             </div>
+            <button id="screenshot-button">⭳</button>
             <div class="popup-container">
                 <div class="add-popup">
                    <form onsubmit="return false">
@@ -118,5 +119,16 @@
             document.querySelector(".title-adder").placeholder = "Title";
             document.querySelector(".description-adder").placeholder = "Description";
         }
+        document.getElementById("screenshot-button").addEventListener("click", function() {
+            html2canvas(document.querySelector("#containner")).then(canvas => {
+                let imgData = canvas.toDataURL("image/png");
+
+                // Create a download link
+                let downloadLink = document.createElement("a");
+                downloadLink.href = imgData;
+                downloadLink.download = "screenshot.png";
+                downloadLink.click();
+            });
+        });
     </script>
 </html>
