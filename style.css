@@ -263,7 +263,7 @@ button {
 
     .lable-title,
     .lable-des {
-        display: block;
+        display: none;
         text-align: left;
         margin: 5px 0px 5px 0px;
         font-weight: bold;
