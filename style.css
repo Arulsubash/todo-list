@@ -1,0 +1,312 @@
+body {
+    margin: 0;
+    font-family:sans-serif;
+}
+
+#title-box {
+    background-color: #FF3B30;
+    width: 100%;
+    height: 15vh;
+}
+
+#title {
+    position: absolute;
+    margin-top: 0px;
+    top: 5%;
+    left: 1%;
+}
+
+#containner {
+    width:100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#list-box {
+    display: block;
+    width: 25%;
+    margin: 22px;
+    background-color: #2E2E2E;
+    position: relative;
+    height: auto;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#box-title, #description {
+    border: solid 1px #3A3A3A;
+    width: 90%;
+    text-align: left;
+    padding: 3px 5px;
+    margin: 0px auto;
+}
+
+#description {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 6px;
+}
+
+#remove {
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 2px;
+    color: #000000;
+}
+
+#add {
+    position: absolute;
+    border: none;
+    top: 85%;
+    left:92%;
+}
+
+#add-button {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50px;
+    background-color: #FF3B30;
+    font-size: 35px;
+}
+
+.popup-container, #popup-container{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);;
+    position: absolute;
+    z-index: 1;
+}
+
+.add-popup {
+    display: block;
+    width: 30%;
+    margin: 100px auto;
+    background-color: rgba(46, 46, 46, 1);
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.title-adder, .description-adder, #title-adder, #description-adder{
+    background-color: #3A3A3A;
+    border: none;
+    border-radius: 3px;
+    width: 70%;
+    margin-top: 20px;
+    padding: 5px;
+    color: white;
+}
+.description-adder, #description-adder {
+    height: 150px;
+}
+
+.lable-title {
+    position: absolute;
+    top:13%;
+    left: 40%;
+}
+.lable-des {
+    position: absolute;
+    top:21.5%;
+    left: 40%;
+}
+
+button {
+    margin:20px 20px;
+    padding: 3px;
+    width: 20%;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 2px;
+    color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    #title-box {
+        background-color: #FF3B30;
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        padding: 0 16px;
+        box-sizing: border-box;
+    }
+
+    #title {
+        margin: 0;
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    #containner {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    #list-box {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 12px;
+        background-color: #2E2E2E;
+        position: relative;
+        height: auto;
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    #box-title, #description {
+        border: solid 1px #3A3A3A;
+        width: 100%;
+        text-align: left;
+        padding: 6px;
+        margin: 10px 0;
+        box-sizing: border-box;
+    }
+
+    #description {
+        padding: 10px;
+    }
+
+    #remove {
+        background-color: #FFFFFF;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 4px;
+        color: #000000;
+        padding: 8px 12px;
+        cursor: pointer;
+    }
+
+    #add {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 10;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    #add-button {
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 50%;
+        background-color: #FF3B30;
+        font-size: 35px;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .popup-container, #popup-container {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+
+    .add-popup {
+        display: block;
+        width: 90%;
+        max-width: 400px;
+        margin: 100px auto;
+        background-color: rgba(46, 46, 46, 1);
+        color: white;
+        text-align: center;
+        border-radius: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .title-adder, .description-adder, #title-adder, #description-adder {
+        background-color: #3A3A3A;
+        border: none;
+        border-radius: 3px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        color: white;
+        box-sizing: border-box;
+    }
+
+    .description-adder, #description-adder {
+        height: 150px;
+    }
+
+    .lable-title,
+    .lable-des {
+        display: block;
+        text-align: left;
+        margin: 5px 0px 5px 0px;
+        font-weight: bold;
+    }
+
+    button {
+        margin: 20px 10px;
+        padding: 10px;
+        width: auto;
+        background-color: #FFFFFF;
+        border: none;
+        border-radius: 4px;
+        color: #000000;
+        cursor: pointer;
+    }
+
+    @media (min-width: 600px) {
+        #list-box {
+            width: 45%;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #list-box {
+            width: 25%;
+        }
+
+        #add {
+            bottom: 30px;
+            right: 30px;
+        }
+    }
+
+    @media (max-width: 360px) {
+        #add-button {
+            width: 50px;
+            height: 50px;
+            font-size: 28px;
+        }
+
+        #add {
+            right: 15px;
+            bottom: 15px;
+        }
+    }
+}

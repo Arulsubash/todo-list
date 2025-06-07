@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <title>Productivity Hub</title>
+    </head>
+    <body>
+        <div id="title-box">
+            <h1 id="title" >Productivity Hub</h1>
+        </div>
+        <div id="containner">
+            <div id="add">
+                <button id="add-button" onclick="popup()">+</button>
+            </div>
+            <div class="popup-container">
+                <div class="add-popup">
+                   <form onsubmit="return false">
+                     <h3 class="lable-title">Title</h3><br>
+                     <input type="text" name="title" class="title-adder"><br>
+                     <h3 class="lable-des">description</h3><br>
+                     <textarea type="text" name="description" class="description-adder"></textarea><br>
+                     <button onclick="adder()">Add</button>
+                     <button onclick="cancel()">Cancel</button>
+                   </form>
+                </div>
+            </div>
+            <div id="popup-container">
+                <div class="add-popup">
+                   <form onsubmit="return false">
+                     <h3 class="lable-title">Title</h3><br>
+                     <input type="text" name="title" id="title-adder"><br>
+                     <h3 class="lable-des">description</h3><br>
+                     <textarea type="text" name="description" id="description-adder"></textarea><br>
+                     <button id="update">Update</button>
+                     <button onclick="cancel()">Cancel</button>
+                   </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+
+        //Add-popup
+        function popup() {
+            let popup = document.querySelector(".popup-container");
+            popup.style.display = "block";
+        }
+
+        //cancel
+        function cancel() {
+            let cancel1 = document.querySelector(".popup-container",);
+            let cancel2 = document.querySelector("#popup-container")
+            cancel1.style.display = "none";
+            cancel2.style.display = "none";
+        }
+
+        //Add
+        function adder() {
+            let adder = document.querySelector("#containner");
+            let popup = document.querySelector(".popup-container");
+            let change = document.querySelector("#popup-container");
+            let title = document.querySelector(".title-adder").value;
+            let des = document.querySelector(".description-adder").value;
+            if(title || des) {
+                let newDiv = document.createElement("div");
+                newDiv.id = "list-box";
+
+                // Combine the innerHTML
+                newDiv.innerHTML = `<h2 id="message">Do it now</h2>`;
+
+                //new h3
+                let h3 = document.createElement("h3");
+                h3.id = "box-title";
+                h3.textContent = title;
+                newDiv.append(h3);
+
+                //new p
+                let p = document.createElement("p");
+                p.id = "description";
+                p.textContent = des;
+                newDiv.append(p);
+
+                let update = document.createElement("button");
+                update.textContent = "Update";
+                update.onclick = function() {
+                    change.style.display = "block";
+                    document.querySelector("#title-adder").value = h3.textContent;
+                    document.querySelector("#description-adder").value = p.textContent;
+                    change_btn = document.querySelector("#update").addEventListener("click", function() {
+                        h3.textContent = document.querySelector("#title-adder").value;
+                        p.textContent = document.querySelector("#description-adder").value;
+                        change.style.display = "none";
+                    });
+                }
+                newDiv.append(update);
+
+                let remove = document.createElement("button");
+                remove.textContent = "Remove";
+                remove.onclick = function() {
+                    event.target.parentElement.remove();
+                };
+                newDiv.append(remove);
+
+                adder.append(newDiv);
+
+                //refresh popup
+                document.querySelector(".title-adder").value = "";
+                document.querySelector(".description-adder").value = "";
+                popup.style.display = "none";
+            }
+
+            else {
+                alert("Enter atleast one filed")
+            }
+        }
+    </script>
+</html>
