@@ -10,6 +10,11 @@
         <div id="title-box">
             <h1 id="title" >Productivity Hub</h1>
         </div>
+
+        <div id="list-box">
+        </div>
+
+        <!--Add todo list containner-->
         <div id="containner">
             <div id="add">
                 <button id="add-button" onclick="popup()">+</button>
@@ -27,6 +32,8 @@
                    </form>
                 </div>
             </div>
+
+            <!--Update Containner-->
             <div id="popup-container">
                 <div class="add-popup">
                    <form onsubmit="return false">
@@ -65,24 +72,24 @@
             let title = document.querySelector(".title-adder").value;
             let des = document.querySelector(".description-adder").value;
             if(title || des) {
-                let newDiv = document.createElement("div");
-                newDiv.id = "list-box";
+                let newDiv = document.querySelector("#list-box");
 
                 // Combine the innerHTML
                 newDiv.innerHTML = `<h2 id="message">Do it now</h2>`;
 
-                //new h3
+                //new h3 element
                 let h3 = document.createElement("h3");
                 h3.id = "box-title";
                 h3.textContent = title;
                 newDiv.append(h3);
 
-                //new p
+                //new p element
                 let p = document.createElement("p");
                 p.id = "description";
                 p.textContent = des;
                 newDiv.append(p);
-
+                
+                //update button
                 let update = document.createElement("button");
                 update.textContent = "Update";
                 update.onclick = function() {
@@ -97,6 +104,7 @@
                 }
                 newDiv.append(update);
 
+                //remove button
                 let remove = document.createElement("button");
                 remove.textContent = "Remove";
                 remove.onclick = function() {
@@ -116,10 +124,14 @@
                 alert("Enter atleast one filed")
             }
         }
+
+        //mobile friendly design
         if (window.innerWidth <= 768) {
             document.querySelector(".title-adder").placeholder = "Title";
             document.querySelector(".description-adder").placeholder = "Description";
         }
+
+        //save todo list image 
         document.getElementById("screenshot-button").addEventListener("click", function() {
             html2canvas(document.querySelector("#containner")).then(canvas => {
                 let imgData = canvas.toDataURL("image/png");
