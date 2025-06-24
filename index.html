@@ -72,7 +72,8 @@
             let title = document.querySelector(".title-adder").value;
             let des = document.querySelector(".description-adder").value;
             if(title || des) {
-                let newDiv = document.querySelector("#list-box");
+                let newDiv = document.createElement("div");
+                newDiv.id = "lisk-box";
 
                 // Combine the innerHTML
                 newDiv.innerHTML = `<h2 id="message">Do it now</h2>`;
