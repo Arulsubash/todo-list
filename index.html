@@ -44,6 +44,11 @@
                 </div>
             </div>
         </div>
+        <div id="list-box">
+            <h2 id="message">Do it now</h2>
+            <h3 id="box-title">m c</h3>
+            <p id="description">skls</p>
+        </div>
     </body>
     <script>
 
@@ -68,6 +73,8 @@
             let change = document.querySelector("#popup-container");
             let title = document.querySelector(".title-adder").value;
             let des = document.querySelector(".description-adder").value;
+            //let Div = document.createElement("div");
+            //Div.id = "list-box";
             if(title || des) {
                 let newDiv = document.createElement("div");
                 newDiv.id = "list-box";
