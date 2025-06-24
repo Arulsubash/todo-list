@@ -136,6 +136,7 @@ button {
     margin: 0px 50px 100px 0px;
     border-radius: 50px;
     background-color: #FF3B30;
+    z-index: 1000;
 }
 
 @media screen and (max-width: 768px) {
