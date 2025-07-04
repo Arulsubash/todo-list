@@ -16,7 +16,6 @@
             <div id="add">
                 <button id="add-button" onclick="popup()">+</button>
             </div>
-            <button id="screenshot-button">Save</button>
             <div class="popup-container">
                 <div class="add-popup">
                    <form onsubmit="return false">
@@ -46,7 +45,8 @@
         </div>
         <!--Notes-->
         <div id="list-box">
-            <h2 id="message" style="padding-top: 5px";">Notes</h2>
+            <h2 id="message";">Notes</h2>
+            <h3 id="box-title">Task Manager</h3>
             <p id="description">Productivity Hub is a straightforward web-based to-do list application designed to streamline your daily tasks. It allows users to easily add, update, and remove tasks, and offers a convenient download feature to save your to-do lists directly to your device. It's built for simplicity and efficiency, helping you stay organized.</p>
             <button onclick="remove(event)">Remove</button>
         </div>
@@ -139,18 +139,5 @@
             document.querySelector(".title-adder").placeholder = "Title";
             document.querySelector(".description-adder").placeholder = "Description";
         }
-
-        //save todo list image 
-        document.getElementById("screenshot-button").addEventListener("click", function() {
-            html2canvas(document.querySelector("#containner")).then(canvas => {
-                let imgData = canvas.toDataURL("image/png");
-
-                // Create a download link
-                let downloadLink = document.createElement("a");
-                downloadLink.href = imgData;
-                downloadLink.download = "screenshot.png";
-                downloadLink.click();
-            });
-        });
     </script>
 </html>
