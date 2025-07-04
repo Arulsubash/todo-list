@@ -52,6 +52,13 @@
     </body>
     <script>
 
+        // Save tasks
+        localStorage.setItem("todoList", JSON.stringify(taskArray));
+
+        // Load tasks
+        const savedTasks = JSON.parse(localStorage.getItem("todoList"));
+        
+        //remove button for default notes
         function remove(event) {
             event.target.parentElement.remove();
         };
