@@ -126,19 +126,6 @@ button {
     color: #000000;
 }
 
-#screenshot-button {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    top: 88%;
-    left: 88%;
-    border: none;
-    margin: 0px 50px 100px 0px;
-    border-radius: 50px;
-    background-color: #FF3B30;
-    z-index: 1;
-}
-
 @media screen and (max-width: 768px) {
     body {
         margin: 0;
@@ -232,23 +219,6 @@ button {
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
-    }
-
-    #screenshot-button {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        border: none;
-        border-radius: 50%;
-        background-color: #FF3B30;
-        left: 250px;
-        top:87.5%;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        z-index: 10;
     }
 
     .popup-container, #popup-container {
